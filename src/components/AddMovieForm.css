@@ -1,0 +1,15 @@
+.add-movie-form{
+gap: 10px;
+margin: 50px 0;
+
+}
+label{
+    color: white;   
+    width: 500px;
+    max-width: 100%;
+}
+
+.add-movie-button{
+    width: 200px;
+    height: 60px;
+}

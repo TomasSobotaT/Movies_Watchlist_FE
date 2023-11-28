@@ -1,0 +1,16 @@
+.delete-button{
+    width: 18px;
+    height: 18px;
+    background-image: url('../images/delete_icon.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    margin-top:auto;
+    margin-bottom: auto;
+}
+
+.delete-button:hover{
+
+    transform: scale(105%);
+}

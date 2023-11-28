@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'movieFont';
+    src: url('../font/RINGM___.TTF');
+}
+
+
+h1{
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    font-family: movieFont;
+}
