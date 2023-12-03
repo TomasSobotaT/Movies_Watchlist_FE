@@ -6,26 +6,58 @@
     filter: grayscale();
 }
 
-.del-movie-container{
+.del-movie-container-big{
     width: 92px;
-    border: 2px solid ghostwhite;
     display: flex;
     flex-direction: column;
-   
+    align-items: center;
     margin: 10px;
     border-radius: 5px;
-    background-color: ghostwhite;
-    box-shadow: 2px 2px 10px ghostwhite;
+    background-color: white;
     transition:  0.5s;
     overflow: hidden;
 }
-
-.del-movie-container:hover{
-    transform: scale(123%);
- 
+.del-movie-container-big-dark{
+    border: 2px solid #141414;
+    background-color: white;
+    box-shadow: 2px 2px 10px white;
+}
+.del-movie-container-big-light{
+    border: 2px solid #141414;
+    background-color: white;
+    box-shadow: 2px 2px 10px #141414;;
 }
 
-.del-movie-image{
+
+.del-movie-container-small{
+    width: 68px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 10px white;
+    transition:  0.5s;
+    overflow: hidden;
+}
+.del-movie-container-small-dark{
+    border: 2px solid #141414;
+    background-color: white;
+    box-shadow: 2px 2px 10px white;
+}
+.del-movie-container-small-light{
+    border: 2px solid #141414;
+    background-color: white;
+    box-shadow: 2px 2px 10px #141414;;
+}
+
+.del-movie-container:hover{
+    transform: scale(125%);
+}
+
+.del-movie-container-big .del-movie-image{
 
     width: 90px;
     height: 110px;
@@ -35,28 +67,54 @@
     overflow: hidden;
     transition:  0.7s;
 }
+.del-movie-container-small .del-movie-image{
 
-
+    width: 66px;
+    height: 85px;
+    background-size: cover;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+    transition:  0.7s;
+}
+.del-movie-image p{
+    font-size: 10px;
+    font-weight: 600;
+    margin: 0 5px;
+    text-align: center;
+}
 
 a{
     text-decoration: none;
 }
 
-.del-movie-title{
+.del-movie-container-big .del-movie-title{
     color: black;
     text-align: center;
     margin: 5px;
-    font-size: 10px;
+    font-size: 8px;
     word-wrap: break-word;
 }
-
-.del-title-and-button{
+.del-movie-container-small .del-movie-title{
+   display: none;
+}
+.del-movie-container-big .del-title-and-button{
     display: flex;
     height: 100%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
 
+}
+.del-movie-container-small .del-title-and-button{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+
 
 }
+
 

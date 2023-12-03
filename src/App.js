@@ -2,43 +2,77 @@
 import './App.css';
 import AddMovieForm from './components/AddMovieForm';
 import DeletedMovies from './components/DeletedMovies'
+// import Footer from './components/Footer'
+
 import Movies from './components/Movies';
 import Title from './components/Title';
-import React, { useState,useEffect } from 'react';
-import {apiGet} from './data';
+import React, { useState, useEffect } from 'react';
+import { apiGet } from './data';
 
 
- function App() {
+function App() {
 
 
-  const  [database, setDatabase] = useState([]); //databaze filmu stažená z API
+  let cardSizeStart = localStorage.getItem("saveCardSize") ?? 'big';
+  let darkModeStart = localStorage.getItem("saveDarkMode") ?? 'dark';
+  let orderStart = localStorage.getItem("saveOrder") ?? 'random';
 
-  const  [movieAdded, setMovieAdded] = useState(false); //jestli byl přidaný film, aby se mohla refresh stranka
+  // prompt("startOrder: "+orderStart)
+
+  const [database, setDatabase] = useState([]); //databaze filmu stažená z API
+  const [cardSize, setCardSize] = useState(cardSizeStart); //velikost karet filmů
+  const [darkMode, setDarkMode] = useState(darkModeStart); // barevny kmod stranky
+  const [order, setOrder] = useState(orderStart);
+  const [movieAdded, setMovieAdded] = useState(false); //jestli byl přidaný film, aby se mohla  stranka refresh
+
+  if(darkMode==='light')
+  {
+    document.body.style.backgroundColor = 'white';
+  }
+  else
+  {
+    document.body.style.backgroundColor = '#141414';
+  }
 
   //stpusti se poprve a pak když se změní proměná movieAdded
-  useEffect(()=>{
-      async function fetchMovies()
-      {
-          const data = await apiGet("https://localhost:7181/api/movies/");
-          setDatabase(data);
-          setMovieAdded(false);
-      };
-     fetchMovies();
+  useEffect(() => {
+    async function fetchMovies() {
+      const data = await apiGet("https://www.tsapi.cz/testApi/movies/");
+      setDatabase(data);
+      setMovieAdded(false);
+    };
+    fetchMovies();
 
-  },[movieAdded]);
-
+  }, [movieAdded]);
 
 
-  return (
+
+
+  return (  
     <div className='container'>
-      <Title/>
-    <AddMovieForm database={database} setDatabase={setDatabase} setMovieAdded={setMovieAdded}/>
-    <div className='movies-main-container'>
-        <Movies database={database} setDatabase={setDatabase}setMovieAdded={setMovieAdded} />
-        <div className='line'></div>
-        <DeletedMovies database={database} setDatabase={setDatabase} setMovieAdded={setMovieAdded}></DeletedMovies>
+
+      <Title cardSize={cardSize} setCardSize={setCardSize}
+       darkMode={darkMode} setDarkMode={setDarkMode} setOrder={setOrder} order={order}/>
+
+      <AddMovieForm database={database} setDatabase={setDatabase} setMovieAdded={setMovieAdded} darkMode={darkMode} />
+      <div className='movies-main-container'>
+
+        <Movies cardSize={cardSize} database={database}
+          setDatabase={setDatabase} setMovieAdded={setMovieAdded} 
+          darkMode={darkMode} order={order}/>
+
+        <div className={`line-${darkMode}`}></div>
+
+        <DeletedMovies cardSize={cardSize} database={database}
+          setDatabase={setDatabase} setMovieAdded={setMovieAdded}
+          darkMode={darkMode} />
+
+      </div>
+      {/* <div className="footer-main w-100 mt-4">
+      <Footer darkMode={darkMode} />
+      </div> */}
     </div>
-    </div>
+
   );
 }
 

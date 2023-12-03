@@ -1,61 +1,131 @@
+:root{
+    --cardBackground:white;
+}
+
 .movies-container{
     display: flex;
-    /* border: 2px solid yellow; */
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.movie-container{
+.movie-container-big{
+    padding-top: 1px;
     width: 154px;
-    border: 2px solid white;
     display: flex;
     flex-direction: column;
-   
+    align-items: center;
     margin: 10px;
     border-radius: 5px;
-    background-color: whitesmoke;
-    box-shadow: 2px 2px 10px whitesmoke;
     transition:  0.7s;
     overflow: hidden;
+    font-size: 14px;
+}
+.movie-container-big-dark{
+    border: 2px solid #141414;
+    background-color: white;
+    box-shadow: 2px 2px 10px white;
+}
+.movie-container-big-light{
+    border: 2px solid #141414;
+    background-color: var(--cardBackground);;
+    box-shadow: 2px 2px 10px #141414;;
 }
 
+.movie-container-small{
+    padding-top: 1px;
+    width: 94px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    border-radius: 5px;
+    transition:  0.7s;
+    overflow: hidden;
+    font-size: 10px;
+}
+.movie-container-small-dark{
+    background-color: white;
+    box-shadow: 2px 2px 10px white;
+    border: 2px solid white;
+
+}
+.movie-container-small-light{
+    background-color:  var(--cardBackground);
+    box-shadow: 2px 2px 10px  #141414;;
+    border: 2px solid  #141414;; 
+}
 .movie-container:hover{
-    transform: scale(110%);
+    transform: scale(111%);
  
 }
 
-.movie-image{
-
+.movie-container-big .movie-image{
+    background-color: var(--cardBackground);
     width: 150px;
     height: 225px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition:  0.5s;
+}
+.movie-container-small .movie-image{
+
+    width: 90px;
+    height: 110px;
     background-size: cover;
+    background-repeat: no-repeat;
+
     cursor: pointer;
     border-radius: 5px;
     overflow: hidden;
     transition:  0.5s;
 }
-
-
-
-a{
-    text-decoration: none;
+ 
+.movie-image p{
+    font-weight: 600;
+    margin: 0 10px;
+    text-align: center;
 }
 
-.movie-title{
-    color: black;
+
+
+
+.movie-container-big .movie-title{
     text-align: center;
     margin: 3px;
     font-size: 14px;
     word-wrap:break-word;
+    color: black;
+}
+
+
+.movie-container-small .movie-title{
+    text-align: center;
+    margin: 3px;
+    font-size: 10px;
+    word-wrap:break-word;
+}
+.movie-container-small-dark .movie-title{
+    color: black;
+}
+.movie-container-small-white .movie-title{
+    color: black;
 }
 
 .title-and-button{
     display: flex;
     height: 100%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
     word-wrap:break-word;
- 
+    color: black;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}

@@ -16,7 +16,7 @@ const DeletedMovies = (props) => {
 
                 props.database[1].map(oneMovie => (
 
-                    <div key={oneMovie.id} className='del-movie-container'>
+                    <div key={oneMovie.id} className={`del-movie-container del-movie-container-${props.cardSize} del-movie-container-${props.cardSize}-${props.darkMode}`}>
                         <a href={`${oneMovie.csfdUrl}`} target='_blank' rel="noreferrer">
 
 

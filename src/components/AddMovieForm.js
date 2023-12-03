@@ -12,10 +12,7 @@ import React, { useState } from 'react';
    const createNewMovie = async () => {
 
     const csfdUrl = 'https://www.google.com/search?q=csfd '+name;
-
-
     const newMovie = new Movie(-1, name, csfdUrl, posterUrl);
-
     await fetchAddMovie(newMovie);
 
     if(!props.database || !Array.isArray(props.database) || props.database.length === 0) {
@@ -28,12 +25,13 @@ import React, { useState } from 'react';
     }
 
     setName('');
-    // setCsfdUrl('');
     setPosterUrl('');
+
+    navigator.vibrate(50);
   };
 
    async function fetchAddMovie(newMovie) {
-    const url = 'https://localhost:7181/api/movies/';
+    const url = 'https://www.tsapi.cz/testApi/movies/';
 
              
       await fetch(url, {
@@ -49,7 +47,8 @@ import React, { useState } from 'react';
   const posterFindLink = 'https://www.movieposters.com/collections/shop?q='+name;
 
   return (
-    <div className='add-movie-form form-group d-flex flex-column flex-md-row  align-items-center'>
+    <div className={`add-movie-form add-movie-form-${props.darkMode} form-group d-flex flex-column flex-md-row  align-items-center`}>
+
       <label htmlFor='add-name-input'>
         Název filmu:
         <input

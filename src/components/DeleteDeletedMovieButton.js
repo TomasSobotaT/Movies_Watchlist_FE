@@ -6,7 +6,7 @@ const DeleteDeletedMovieButton = (props) => {
 
 
     async function fetchDeleteMovie(id){
-            const url = 'https://localhost:7181/api/deletedMovies/' + id;
+            const url = 'https://www.tsapi.cz/testApi/deletedMovies/' + id;
            await fetch((url),{
             method:'DELETE'
             })
