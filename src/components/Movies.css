@@ -33,7 +33,7 @@
 
 .movie-container-small{
     padding-top: 1px;
-    width: 94px;
+    width: 98px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,8 +61,8 @@
 
 .movie-container-big .movie-image{
     background-color: var(--cardBackground);
-    width: 150px;
-    height: 225px;
+    width: 144px;
+    height: 220px;
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -123,9 +123,35 @@
     padding: 5px;
     word-wrap:break-word;
     color: black;
+  
 }
 
 a{
     text-decoration: none;
     color: black;
 }
+
+.movie-image-inner{
+    border-radius: 5px;
+    padding: 2px 0;
+}
+.movie-image-inner * {
+    display: none;
+    overflow: hidden;
+  }
+  
+  .movie-image-inner-dark{
+
+    background: black;
+    color: white;
+  }
+  
+  .movie-image-inner-light {
+
+    background: white;
+    color: black;
+  }
+  
+  .movie-image:hover .movie-image-inner * {
+   display: block;
+  }

@@ -1,12 +1,14 @@
 import './DeleteDeletedMovieButton.css'
-
-
+import  {API_URL} from '../data'
 
 const DeleteDeletedMovieButton = (props) => {
 
 
     async function fetchDeleteMovie(id){
-            const url = 'https://www.tsapi.cz/testApi/deletedMovies/' + id;
+          
+      
+            const url = API_URL + 'deletedMovies/' + id;
+
            await fetch((url),{
             method:'DELETE'
             })

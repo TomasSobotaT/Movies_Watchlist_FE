@@ -1,23 +1,29 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Movies Watchlist",
+  "name": "Movies Watchlist",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "./favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "./favicon.ico",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "72x72 96x96 128x128 256x256"
     },
     {
-      "src": "logo512.png",
+      "src": "./favicon.ico",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
+
+  "permissions": {
+    "notifications": {}
+  },
+    
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

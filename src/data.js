@@ -1,11 +1,10 @@
 //třída film
 export class Movie {
 
-    constructor(id,name,csfdUrl,posterUrl)
+    constructor(id,name,posterUrl)
     { 
         this.id = id;
         this.name = name;
-        this.csfdUrl = csfdUrl;
         this.posterUrl = posterUrl;
     }
 }
@@ -42,3 +41,6 @@ export async function apiGet(url) {
     return sortedArray;
 
   }
+
+  // export const API_URL = "https://localhost:7181/testApi/";
+  export const API_URL = "https://www.tsapi.cz/api/";
