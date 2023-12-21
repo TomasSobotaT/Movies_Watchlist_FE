@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'movieFont';
+    src: url('../font/RINGM___.TTF');
+}
+
+
+.no-logged-info{
+font-family: movieFont;
+}
+
+.text-dark{
+color:#ffc107 !important;
+}
+
+.text-light{
+    color:#dc3545 !important;
+}

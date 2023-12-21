@@ -1,8 +1,31 @@
-
-.footer-text-dark{
-color: white !important;
+.footer-text-dark {
+    color: white !important;
 }
 
-.footer-text-light{
+.footer-text-light {
     color: black !important;
-    }
+}
+
+.hr-dark {
+   color: white !important;
+}
+
+.hr-light {
+    color: black !important;
+}
+
+
+.pay-csob{
+
+    width: 60px !important;
+}
+
+.pay-paypal{
+    width: 100px !important
+}
+
+
+.footer-text-info{
+    margin-top: 5px;
+    font-size: 75%;
+}

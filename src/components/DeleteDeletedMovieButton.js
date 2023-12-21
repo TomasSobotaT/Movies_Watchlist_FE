@@ -6,11 +6,15 @@ const DeleteDeletedMovieButton = (props) => {
 
     async function fetchDeleteMovie(id){
           
-      
+      const token = localStorage.getItem("jwt");
+
             const url = API_URL + 'deletedMovies/' + id;
 
            await fetch((url),{
-            method:'DELETE'
+            method:'DELETE',
+            headers: {
+              'Authorization': `Bearer ${token}`
+          }
             })
             props.setMovieAdded(true);
     }

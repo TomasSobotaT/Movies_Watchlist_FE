@@ -28,11 +28,13 @@ function AddMovieForm(props) {
 
   async function fetchAddMovie(newMovie) {
     const url = API_URL + 'movies/';
+    const token = localStorage.getItem("jwt");
 
     await fetch(url, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(newMovie),
