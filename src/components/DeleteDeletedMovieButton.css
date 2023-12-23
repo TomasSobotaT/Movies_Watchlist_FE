@@ -8,6 +8,7 @@
     border: none;
     margin-top:auto;
     margin-bottom: auto;
+    background-color: transparent;
 }
 
 .delete-button:hover{

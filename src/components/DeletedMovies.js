@@ -6,6 +6,9 @@ import { demonstrationDataDel } from '../data';
 import { useState } from 'react';
 
 const DeletedMovies = (props) => {
+
+    const movieDb = (props.language === "EN") ? "imdb" : "csfd";
+     
     let [presentationDataDel, setPresentationDataDel] = useState(demonstrationDataDel());
 
     if (props.isLogged) {
@@ -53,7 +56,7 @@ if (props.isLogged)
                 props.database[1].map(oneMovie => (
 
                     <div key={oneMovie.id} className={`del-movie-container del-movie-container-${props.cardSize} del-movie-container-${props.cardSize}-${props.darkMode}`}>
-                        <a href={`https://www.google.com/search?q=csfd+${oneMovie.name}`} target='_blank' rel="noreferrer">
+                        <a href={`https://www.google.com/search?q=${movieDb}+${oneMovie.name}`} target='_blank' rel="noreferrer">
 
 
 
@@ -131,7 +134,7 @@ return (
             presentationDataDel.map(oneMovie => (
 
                 <div key={oneMovie.id} className={`del-movie-container del-movie-container-${props.cardSize} del-movie-container-${props.cardSize}-${props.darkMode}`}>
-                    <a href={`https://www.google.com/search?q=csfd+${oneMovie.name}`} target='_blank' rel="noreferrer">
+                    <a href={`https://www.google.com/search?q=${movieDb}+${oneMovie.name}`} target='_blank' rel="noreferrer">
 
 
 

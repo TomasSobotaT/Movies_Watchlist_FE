@@ -1,0 +1,31 @@
+.russel{
+    filter: grayscale();
+  border-radius: 10px  10px 0 0;
+
+}
+
+.russel:hover{
+    filter: none;
+}
+
+
+.russel-text{
+  padding: 5px;
+  background-color: #141414;
+  border-radius: 0  0 10px 10px;
+}
+
+.russel-text p{
+    background-color: #141414;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .russel-text{
+    animation: fadeIn 5s ease-in-out;
+  }
+

@@ -26,3 +26,20 @@ margin: 50px 0;
 .add-movie-form label a{
     color:blue;
 }
+
+.login-form-info-button{
+    border: none;
+    background-color: transparent;
+  }
+
+.movie-form-tip{
+    border: 7px solid black;
+    padding: 5px;
+    min-width: 250px;
+    padding-top: 10px;
+}
+
+.mf-span{
+    text-align: center;
+    font-size: 80%;
+}

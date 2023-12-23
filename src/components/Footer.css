@@ -1,3 +1,4 @@
+
 .footer-text-dark {
     color: white !important;
 }
@@ -8,10 +9,12 @@
 
 .hr-dark {
    color: white !important;
+   width: 80vw;
 }
 
 .hr-light {
     color: black !important;
+    width: 80vw;
 }
 
 

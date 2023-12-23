@@ -53,11 +53,12 @@ export async function apiGet(url) {
 
   }
 
+  //url volaní API
   // export const API_URL = "https://localhost:7181/testApi/";
   export const API_URL = "https://www.tsapi.cz/testApi/";
 
 
-
+// vzorové filmy na tituní stránku
  export const demonstrationData =  () =>
  {
   return [
@@ -80,9 +81,17 @@ export async function apiGet(url) {
  new Movie(17, 'V Brugách', 'https://m.media-amazon.com/images/I/61ntZcqIUzL.jpg'),
  new Movie(18, 'Alien', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/ffd005c1c156c002d6318d24e08c3e60_027e0963-448d-457f-a46b-5db0550dc0c1_500x749.jpg?v=1573587257'),
  new Movie(19, 'Dokonalý trik', 'https://www.movieposters.com/cdn/shop/products/99763af666ee931302e21c9cad3243ed_48a46774-8baf-4a98-b2bc-9ecf85dbff8b_480x.progressive.jpg?v=1573655133'),
- new Movie(20, 'Hanebný pancharti', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/inglourious-basterds-style1.24x36_500x749.jpg?v=1615395292')
-
-
+ new Movie(20, 'Hanebný pancharti', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/inglourious-basterds-style1.24x36_500x749.jpg?v=1615395292'),
+ new Movie(21, 'Gladiátor', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/2fb2fa7a5a0a022982abcf77771317bc_cdf2419f-5bd3-4d3e-98a2-94588c9b79cf_500x749.jpg?v=1573592563'),
+ new Movie(22, 'Vampire hunter D', 'https://i.ebayimg.com/images/g/NuwAAOSwH9JfmuCE/s-l1600.jpg '),
+ new Movie(23, 'Warrior', 'https://i.ebayimg.com/images/g/soUAAOSwIiljh5-t/s-l1600.jpg'),
+ new Movie(24, 'Marťan', 'https://i.pinimg.com/564x/26/78/67/267867cba8806b9c0b8f45fac4ab2633.jpg'),
+ new Movie(25, 'Iluzionista', 'https://movieposters2.com/images/672917-b.jpg'),
+ new Movie(26, 'Ponorka U-571', 'https://www.themoviedb.org/t/p/original/A0ZUCC8neM6KY5bv775Z8DsT06B.jpg'),
+ new Movie(27, 'Payback', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYYg50P9_AbS6u_6ibTB5TeBFwQL9ZTY-ac1Sb5am299B2eBX-weusFAGYJwSUHQHZmZs&usqp=CAU'),
+ new Movie(28, 'Equilibrium', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbc7yQV0NXWkFIro0f_V2SYlEVTMiSvrfficXdXSKRahwIHSFLHKD17n9w82wpGadqyKI&usqp=CAU'),
+ new Movie(29, 'Obchodník se smrtí', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiUiotE6n9O-GYpxD0zf2IHsXze-lbz1zET0udKW2Dslo_Dd_qlr6pfRa07rxtQOJ27so&usqp=CAU'),
+ new Movie(30, 'Návrat do budoucnosti', 'https://www.movieposters.com/cdn/shop/products/0b2b67a1de6a06d1ce65e4ccc64047e3_a9f7318e-c5c4-4d2a-aed2-890bbfad883c_480x.progressive.jpg?v=1573590273'),
 ]
  }
  
@@ -109,8 +118,18 @@ export async function apiGet(url) {
   new Movie(18, 'King Kong', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/6f435fde73a2173524187ea15e8ec786_107a6989-b0d5-4556-abc9-b6eeb24b8f2b_500x749.jpg?v=1573651192'),
   new Movie(19, 'Počátek ', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/20664117398ad7301d9a9af6d2e5aa5c_1e3ea98b-b962-4982-9f74-2e44381fc6ff_500x749.jpg?v=1573618694'),
   new Movie(20, 'Princezna Nevěsta', 'https://www.movieposters.com/cdn/shop/products/13d32f1edc9b772b9cb8220cf0a5462a_e61c1195-9dd6-4167-91d5-d7ef5876a1c4_480x.progressive.jpg?v=1573590428'),
+  new Movie(21, 'Terminátor 2', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/55cea2691f42048d74ea7a4f39b7afa1_500x749.jpg?v=1573572639'),
+  new Movie(22, 'Hvězdný prach', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/stardust_500x749.jpg?v=1579124325'),
+  new Movie(23, 'Troja', 'https://img.fruugo.com/product/9/40/14384409_max.jpg'),
+  new Movie(24, 'Jméno růže', 'https://www.themoviedb.org/t/p/w220_and_h330_face/dTZWPvIN6thqoxq7jvntUrPIsDO.jpg'),
+  new Movie(25, '96 hodin', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/14ca94f443b36e8c4f2d93359728d014_f55b9678-7bb2-4c41-a6e1-87d230e49f3f_500x749.jpg?v=1573613589'),
+  new Movie(26, 'Pátý element', 'https://i.ebayimg.com/images/g/22IAAOSwyudghuPX/s-l960.jpg'),
+  new Movie(27, 'Princezna Mononoke', 'https://imagesyoulike.com/images/100000/32x24/249635.jpg'),
+  new Movie(28, 'Vlk z Wall Street', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/wolfofwallstreet_500x749.jpg?v=1620229322'),
+  new Movie(29, 'Ledově ostří', 'https://cdn.shopify.com/s/files/1/0057/3728/3618/products/d63dcdd0e19d414d839cfe604e4d52c4_e3b78abe-e2a8-44d6-a970-a3d77e346fa7_500x749.jpg?v=1573594911s'),
+  new Movie(30, 'Ospalá díra', 'https://i.ebayimg.com/images/g/~VgAAOSwea5ghuOw/s-l960.jpg'),
+
 
  ]
  }
 
- 

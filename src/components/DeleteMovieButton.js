@@ -1,37 +1,36 @@
 import './DeleteMovieButton.css'
-import  {API_URL} from '../data'
+import { API_URL } from '../data'
 
 
 const DeleteMovieButton = (props) => {
 
 
-    async function fetchDeleteMovie(id){
-
-        const token = localStorage.getItem("jwt");
+    async function fetchDeleteMovie(id) {
+        try {
+            const token = localStorage.getItem("jwt");
             const url = API_URL + 'movies/' + id;
 
-           await fetch((url),{
-            method:'DELETE',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
+            await fetch((url), {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
             })
             props.setMovieAdded(true);
+        }
+        catch (e) {
+            if (props.language === "EN")
+                props.setFlash({ show: true, message: `Server connection error (${e.message})`, color: '#DC4C64' });
+            else
+            props.setFlash({ show: true, message: `Chyba spojení se serverem (${e.message})`, color: '#DC4C64' });
+        }
     }
 
 
-   const deleteMovieHandler = async () =>
-    {
-        // const dbDel = props.database[1];
-        // const db = props.database[0].filter(a=>a.id !== props.id)
-        // const tempDb =  [db,[dbDel]];
-        // console.log(db)
-        // console.log(tempDb)
+    const deleteMovieHandler = async () => {
+       
+        fetchDeleteMovie(props.id);
 
-       
-        // props.setDatabase(tempDb);
-      fetchDeleteMovie(props.id);
-       
     }
 
     return (

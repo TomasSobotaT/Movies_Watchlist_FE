@@ -3,16 +3,20 @@
 
 }
 
+
+
 .nav-dark{
-  --bs-nav-link-color: white;
   --bs-nav-link-hover-color: white;
 }
 
 .nav-light{
-  --bs-nav-link-color: black;
   --bs-nav-link-hover-color: black;
 }
 
 .hover-button:hover, .hover-button:active{
   transform: scale(103%);
+}
+
+.af-text{
+  color: #fd7e14 !important;
 }

@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 const Movies = (props) => {
     let [presentationData, setPresentationData] = useState(demonstrationData());
-
+    const movieDb = (props.language === "EN") ? "imdb" : "csfd";
 
     if (props.isLogged) {
 
@@ -31,22 +31,21 @@ const Movies = (props) => {
             }
         }
     }
-    else
-    {
+    else {
 
-        
+
         if (props.order === "random") {
             presentationData = shuffleArray(presentationData);
         }
         else if (props.order === "name") {
             presentationData = sortArrayByName(presentationData);
+        }
+        else {
+            presentationData = sortArrayById(presentationData);
+
+        }
+
     }
-    else {
-        presentationData = sortArrayById(presentationData);
-        
-    }
-    
-}
 
 
     if (props.isLogged)
@@ -57,13 +56,20 @@ const Movies = (props) => {
 
 
                         <div key={oneMovie.id} className={`movie-container movie-container-${props.cardSize} movie-container-${props.cardSize}-${props.darkMode}`}>
-                            <a href={`https://www.google.com/search?q=csfd+${oneMovie.name}`} target='_blank' rel="noreferrer"
+                            <a href={`https://www.google.com/search?q=${movieDb}+${oneMovie.name}`} target='_blank' rel="noreferrer"
                                 className='text-decoration-none text-dark'>
 
                                 {(oneMovie.posterUrl === "" || !oneMovie.posterUrl) ?
                                     (
                                         <div className='movie-image d-flex flex-column justify-content-center align-items-center'>
-                                            <p>Přidáno:</p>
+                                            <p>
+                                            {
+                                                    (props.language === "EN") ?
+                                                        <span>Added:</span>
+                                                        :
+                                                        <span>Přidáno:</span>
+                                                } 
+                                            </p>
                                             <p>{
                                                 new Date(oneMovie.dateAdded).getDate() + ". " +
                                                 (new Date(oneMovie.dateAdded).getMonth() + 1) + ". " +
@@ -77,7 +83,14 @@ const Movies = (props) => {
                                         <div className='movie-image d-flex justify-content-center align-items-center' style={{ backgroundImage: `url(${oneMovie.posterUrl})` }}>
                                             <div className={`movie-image-inner movie-image-inner-${props.darkMode} d-flex flex-column justify-content-center align-items-center`}>
 
-                                                <p>Přidáno:</p>
+                                                <p>
+                                                {
+                                                    (props.language === "EN") ?
+                                                        <span>Added:</span>
+                                                        :
+                                                        <span>Přidáno:</span>
+                                                }
+                                                </p>
                                                 <p>{
                                                     new Date(oneMovie.dateAdded).getDate() + ". " +
                                                     (new Date(oneMovie.dateAdded).getMonth() + 1) + ". " +
@@ -96,12 +109,15 @@ const Movies = (props) => {
                                     <p className='movie-title text-wrap'>{oneMovie.name}</p>
                                 </a>
                                 {
-                                   
+
                                     <DeleteMovieButton
-                                    database={props.database}
-                                    id={oneMovie.id}
-                                    setMovieAdded={props.setMovieAdded}
-                                    /> 
+                                        database={props.database}
+                                        id={oneMovie.id}
+                                        setMovieAdded={props.setMovieAdded}
+                                        setFlash={props.setFlash} flash={props.flash}
+                                        language={props.language} setLanguage={props.setLanguage}
+
+                                    />
                                 }
                             </div>
 
@@ -123,13 +139,20 @@ const Movies = (props) => {
 
 
                         <div key={oneMovie.id} className={`movie-container movie-container-${props.cardSize} movie-container-${props.cardSize}-${props.darkMode}`}>
-                            <a href={`https://www.google.com/search?q=csfd+${oneMovie.name}`} target='_blank' rel="noreferrer"
+                            <a href={`https://www.google.com/search?q=${movieDb}+${oneMovie.name}`} target='_blank' rel="noreferrer"
                                 className='text-decoration-none text-dark'>
 
                                 {(oneMovie.posterUrl === "" || !oneMovie.posterUrl) ?
                                     (
                                         <div className='movie-image d-flex flex-column justify-content-center align-items-center'>
-                                            <p>Přidáno:</p>
+                                            <p>
+                                                {
+                                                    (props.language === "EN") ?
+                                                        <span>Added:</span>
+                                                        :
+                                                        <span>Přidáno:</span>
+                                                }
+                                            </p>
                                             <p>{
                                                 new Date(oneMovie.dateAdded).getDate() + ". " +
                                                 (new Date(oneMovie.dateAdded).getMonth() + 1) + ". " +
@@ -143,7 +166,14 @@ const Movies = (props) => {
                                         <div className='movie-image d-flex justify-content-center align-items-center' style={{ backgroundImage: `url(${oneMovie.posterUrl})` }}>
                                             <div className={`movie-image-inner movie-image-inner-${props.darkMode} d-flex flex-column justify-content-center align-items-center`}>
 
-                                                <p>Přidáno:</p>
+                                                <p>
+                                                    {
+                                                        (props.language === "EN") ?
+                                                            <span>Added:</span>
+                                                            :
+                                                            <span>Přidáno:</span>
+                                                    }
+                                                </p>
                                                 <p>{
                                                     new Date(oneMovie.dateAdded).getDate() + ". " +
                                                     (new Date(oneMovie.dateAdded).getMonth() + 1) + ". " +
@@ -161,7 +191,7 @@ const Movies = (props) => {
                                 <a href={`https://www.google.com/search?q=csfd+${oneMovie.name}`} target='_blank' rel="noreferrer">
                                     <p className='movie-title text-wrap text-center'>{oneMovie.name}</p>
                                 </a>
-                               
+
                             </div>
 
 
